@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block masthead %}
+    <!-- Page Header -->
+    <header class="masthead">
+        {% for picture in product.productPictures %}
+                <img src="{{ picture.file }}" width="100%">
+            {% endfor %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    
+{% endblock %}
+
+{% block body %}
+        
+        <section>
+            <h1 class="text-primary">{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
+            <p>{{ product.price }} €</p>
+            <button class="btn btn-primary">Ajouter au panier</button>
+        </section>
+    
+
+
+{% endblock %}

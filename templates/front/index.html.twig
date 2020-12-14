@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boundaries{% endblock %}
+
+
+{% block masthead %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ asset('img/boundaries.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+              <h1>Create from separation</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    
+{% endblock %}
+      
+{% block body %}
+  
+    {% for product in products %}
+    
+        <section>
+            <h2><a href="{{ path('productDetail',{'permalink':product.permalink}) }}">{{ product.name }}</a></h2>
+            <img src="{{ product.productPictures.0.file }}" width="300">
+            
+        </section>
+    
+    {% endfor %}
+
+{% endblock %}
